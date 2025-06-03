@@ -347,14 +347,16 @@ function openPaymentModal(productId) {
         warrantySection.classList.add('hidden');
     }
     
-    // Generate WhatsApp message
-    const message = generateWhatsAppMessage(product);
-    const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-    whatsappButton.href = whatsappUrl;
-    
-    // Show modal with animation
-    paymentModal.classList.remove('hidden');
-    paymentModal.classList.add('modal-show');
+    // Generate WhatsApp message and update button
+const whatsappMessage = generateWhatsAppMessage(product);
+const whatsappNumber = '233209707452';
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+document.getElementById('whatsapp-button').href = whatsappUrl;
+
+// Show modal with animation
+paymentModal.classList.remove('hidden');
+paymentModal.classList.add('modal-show');
+
     
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
@@ -484,15 +486,6 @@ function setupIntersectionObserver() {
     });
 }
 
-// Update footer WhatsApp link
-function updateFooterWhatsApp() {
-    const footerWhatsApp = document.getElementById('footer-whatsapp');
-    if (footerWhatsApp) {
-        const message = `Hi! I found your store and I'm interested in your products. Could you please help me with more information?`;
-        const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-        footerWhatsApp.href = whatsappUrl;
-    }
-}
 
 // Utility functions
 function showLoading() {
