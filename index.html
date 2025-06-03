@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Product Catalog</title>
+    <meta name="description" content="Discover our curated collection of premium products with instant WhatsApp ordering">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        },
+                        accent: {
+                            500: '#10b981',
+                            600: '#059669'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 0.6s ease-in-out',
+                        'scale-in': 'scaleIn 0.2s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                    <i class="fas fa-store text-primary-500 mr-2"></i>
+                    Premium Store
+                </h1>
+                <div class="flex items-center space-x-4">
+                    <a href="#products" class="text-gray-600 hover:text-primary-500 transition-colors">
+                        Products
+                    </a>
+                    <a href="#contact" class="bg-accent-500 text-white px-4 py-2 rounded-lg hover:bg-accent-600 transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in">
+                Discover Premium Products
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in">
+                Curated collection of high-quality products with instant WhatsApp ordering
+            </p>
+            <a href="#products" class="inline-flex items-center bg-primary-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 animate-bounce-gentle">
+                <i class="fas fa-arrow-down mr-2"></i>
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our Products
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Each product is carefully selected for quality and style. Click "Buy Now" for instant ordering via WhatsApp.
+                </p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-store mr-2"></i>
+                        Premium Store
+                    </h3>
+                    <p class="text-gray-300">
+                        Your trusted destination for premium quality products with exceptional customer service.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div id="contact">
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <div class="space-y-2">
+                        <a href="#" id="footer-whatsapp" class="flex items-center text-gray-300 hover:text-accent-500 transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Us
+                        </a>
+                        <p class="text-gray-300">
+                            <i class="fas fa-clock mr-2"></i>
+                            24/7 Customer Support
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2024 Premium Store. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <div class="p-6">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Order Details</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="mb-6">
+                    <div class="flex items-center mb-4">
+                        <img id="modal-product-image" src="" alt="" class="w-16 h-16 object-cover rounded-lg mr-4">
+                        <div>
+                            <h4 id="modal-product-name" class="font-semibold text-gray-800"></h4>
+                            <p id="modal-product-price" class="text-primary-500 font-bold"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Instructions -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">How to Order:</h4>
+                    <ol class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">1</span>
+                            Click the WhatsApp button below
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
+                            Confirm your order details
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
+                            Provide delivery address
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">4</span>
+                            Complete payment as instructed
+                        </li>
+                    </ol>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a id="whatsapp-button" href="#" class="block w-full bg-accent-500 text-white text-center py-4 rounded-lg font-semibold hover:bg-accent-600 transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                    Order via WhatsApp
+                </a>
+                
+                <p class="text-gray-500 text-sm text-center mt-3">
+                    Fast delivery • Secure payment • 24/7 support
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
