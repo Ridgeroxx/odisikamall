@@ -589,7 +589,36 @@ function trackEvent(action, category, label) {
     console.log('Event tracked:', { action, category, label });
 }
 
+// Utility function to get color hex codes
+function getColorHex(colorName) {
+    const colorMap = {
+        'Black': '#000000',
+        'White': '#FFFFFF',
+        'Silver': '#C0C0C0',
+        'Gold': '#FFD700',
+        'Brown': '#8B4513',
+        'Navy': '#000080',
+        'Blue': '#0000FF',
+        'Red': '#FF0000',
+        'Green': '#008000',
+        'Pink': '#FFC0CB',
+        'Gray': '#808080',
+        'Grey': '#808080',
+        'Rose Gold': '#E8B4B8',
+        'Beige': '#F5F5DC',
+        'Tan': '#D2B48C',
+        'Yellow': '#FFFF00',
+        'Purple': '#800080',
+        'Orange': '#FFA500'
+    };
+    
+    // Try to match the color name, fallback to a default color
+    const normalizedColor = colorName.split('/')[0].trim(); // Handle "Black/White" format
+    return colorMap[normalizedColor] || '#6B7280'; // Default to gray
+}
+
 // Make functions globally available
 window.openPaymentModal = openPaymentModal;
 window.closePaymentModal = closePaymentModal;
 window.handleImageError = handleImageError;
+window.getColorHex = getColorHex;
