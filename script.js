@@ -190,7 +190,7 @@ const products = [
 
 // Configuration
 const config = {
-    whatsappNumber: '+233209707452', // Odisika Mall WhatsApp number
+    whatsappNumber: '+233542676713', // Odisika Mall WhatsApp number
     currency: 'GH₵',
     storeName: 'Odisika Mall'
 };
@@ -231,30 +231,55 @@ function renderProducts() {
     if (!productsGrid) return;
     
     const productHTML = products.map((product, index) => `
-        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl animate-fade-in" 
-             style="animation-delay: ${index * 0.1}s">
+        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl animate-fade-in group cursor-pointer" 
+             style="animation-delay: ${index * 0.1}s"
+             onclick="openPaymentModal(${product.id})">
             <div class="product-image-container relative h-64 overflow-hidden">
                 <img src="${product.image}" 
                      alt="${product.name}" 
-                     class="product-image w-full h-full object-cover transition-transform duration-300"
+                     class="product-image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                      loading="lazy"
                      onerror="this.src='https://via.placeholder.com/400x400/3b82f6/ffffff?text=Product+Image'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="absolute top-4 right-4">
-                    <span class="bg-white/90 backdrop-blur-sm text-gray-800 px-2 py-1 rounded-lg text-sm font-semibold">
+                    <span class="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-bold shadow-lg animate-float">
                         ${config.currency}${product.price}
                     </span>
                 </div>
+                <div class="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                    <span class="bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium animate-pulse">
+                        ✨ Premium
+                    </span>
+                </div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-110 group-hover:scale-100">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-xl animate-bounce-gentle">
+                        <i class="fas fa-eye text-primary-500 text-xl"></i>
+                    </div>
+                </div>
             </div>
             <div class="p-6">
-                <h3 class="font-bold text-xl text-gray-800 mb-2 line-clamp-2">${product.name}</h3>
+                <h3 class="font-bold text-xl text-gray-800 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300">${product.name}</h3>
                 <p class="text-gray-600 mb-4 text-sm line-clamp-2">${product.description}</p>
+                ${product.details && product.details.colors ? `
+                <div class="mb-3">
+                    <div class="flex gap-1">
+                        ${product.details.colors.slice(0, 3).map(color => `
+                            <div class="w-4 h-4 rounded-full border-2 border-white shadow-sm" 
+                                 style="background: ${getColorHex(color)}"
+                                 title="${color}"></div>
+                        `).join('')}
+                        ${product.details.colors.length > 3 ? `<span class="text-xs text-gray-500 ml-1">+${product.details.colors.length - 3}</span>` : ''}
+                    </div>
+                </div>
+                ` : ''}
                 <div class="flex justify-between items-center">
-                    <span class="text-2xl font-bold text-primary-500">
+                    <span class="text-2xl font-bold text-primary-500 group-hover:text-accent-500 transition-colors duration-300">
                         ${config.currency}${product.price}
                     </span>
-                    <button onclick="openPaymentModal(${product.id})" 
-                            class="btn-primary bg-accent-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-accent-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
-                        <i class="fas fa-shopping-cart mr-2"></i>
+                    <button onclick="event.stopPropagation(); openPaymentModal(${product.id})" 
+                            class="btn-primary bg-accent-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-accent-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 animate-glow">
+                        <i class="fas fa-shopping-cart mr-2 animate-wiggle"></i>
                         Buy Now
                     </button>
                 </div>
