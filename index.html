@@ -50,7 +50,7 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
                     <i class="fas fa-store text-primary-500 mr-2"></i>
-                    Premium Store
+                    Odisika Mall
                 </h1>
                 <div class="flex items-center space-x-4">
                     <a href="#products" class="text-gray-600 hover:text-primary-500 transition-colors">
@@ -69,10 +69,10 @@
     <section class="bg-gradient-to-br from-primary-50 to-white py-16 md:py-24">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in">
-                Discover Premium Products
+                Welcome to Odisika Mall
             </h2>
             <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in">
-                Curated collection of high-quality products with instant WhatsApp ordering
+                Your trusted store for quality products with instant WhatsApp ordering
             </p>
             <a href="#products" class="inline-flex items-center bg-primary-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 animate-bounce-gentle">
                 <i class="fas fa-arrow-down mr-2"></i>
@@ -107,10 +107,10 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">
                         <i class="fas fa-store mr-2"></i>
-                        Premium Store
+                        Odisika Mall
                     </h3>
                     <p class="text-gray-300">
-                        Your trusted destination for premium quality products with exceptional customer service.
+                        Your trusted destination for quality products with exceptional customer service in Ghana.
                     </p>
                 </div>
                 <div>
@@ -145,11 +145,11 @@
 
     <!-- Payment Modal -->
     <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+        <div class="bg-white rounded-2xl max-w-2xl w-full mx-4 transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-y-auto" id="modal-content">
             <div class="p-6">
                 <!-- Modal Header -->
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800">Order Details</h3>
+                    <h3 class="text-2xl font-bold text-gray-800">Product Details</h3>
                     <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -157,12 +157,54 @@
                 
                 <!-- Product Info -->
                 <div class="mb-6">
-                    <div class="flex items-center mb-4">
-                        <img id="modal-product-image" src="" alt="" class="w-16 h-16 object-cover rounded-lg mr-4">
-                        <div>
-                            <h4 id="modal-product-name" class="font-semibold text-gray-800"></h4>
-                            <p id="modal-product-price" class="text-primary-500 font-bold"></p>
+                    <div class="flex flex-col md:flex-row gap-4 mb-4">
+                        <img id="modal-product-image" src="" alt="" class="w-full md:w-32 h-48 md:h-32 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <h4 id="modal-product-name" class="text-xl font-bold text-gray-800 mb-2"></h4>
+                            <p id="modal-product-description" class="text-gray-600 mb-3"></p>
+                            <p id="modal-product-price" class="text-2xl font-bold text-primary-500"></p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Product Features -->
+                <div id="product-features" class="mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Key Features:</h4>
+                    <ul id="features-list" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
+                        <!-- Features will be populated dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Product Options -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Colors -->
+                    <div id="colors-section" class="hidden">
+                        <h4 class="font-semibold text-gray-800 mb-2">Available Colors:</h4>
+                        <div id="colors-list" class="flex flex-wrap gap-2">
+                            <!-- Colors will be populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Sizes -->
+                    <div id="sizes-section" class="hidden">
+                        <h4 class="font-semibold text-gray-800 mb-2">Available Sizes:</h4>
+                        <div id="sizes-list" class="flex flex-wrap gap-2">
+                            <!-- Sizes will be populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Compatibility -->
+                    <div id="compatibility-section" class="hidden">
+                        <h4 class="font-semibold text-gray-800 mb-2">Compatibility:</h4>
+                        <div id="compatibility-list" class="flex flex-wrap gap-2">
+                            <!-- Compatibility will be populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Warranty -->
+                    <div id="warranty-section" class="hidden">
+                        <h4 class="font-semibold text-gray-800 mb-2">Warranty:</h4>
+                        <p id="warranty-info" class="text-gray-600"></p>
                     </div>
                 </div>
                 
@@ -176,11 +218,11 @@
                         </li>
                         <li class="flex items-start">
                             <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
-                            Confirm your order details
+                            Specify your preferred color/size if applicable
                         </li>
                         <li class="flex items-start">
                             <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
-                            Provide delivery address
+                            Provide delivery address in Ghana
                         </li>
                         <li class="flex items-start">
                             <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">4</span>
@@ -196,7 +238,7 @@
                 </a>
                 
                 <p class="text-gray-500 text-sm text-center mt-3">
-                    Fast delivery • Secure payment • 24/7 support
+                    Fast delivery across Ghana • Secure payment • Customer support
                 </p>
             </div>
         </div>
