@@ -1,199 +1,99 @@
 // Product data for Odisika Mall
 const products = [
-    {
-        id: 1,
-        name: "Premium Wireless Headphones",
-        price: 299.99,
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&crop=center",
-        description: "High-quality wireless headphones with noise cancellation",
-        details: {
-            features: ["Active Noise Cancellation", "30-hour battery life", "Quick charge", "Bluetooth 5.0"],
-            colors: ["Black", "White", "Silver"],
-            warranty: "2 years international warranty"
-        }
-    },
-    {
-        id: 2,
-        name: "Smart Fitness Watch",
-        price: 199.99,
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop&crop=center",
-        description: "Advanced fitness tracking with heart rate monitor",
-        details: {
-            features: ["Heart rate monitor", "GPS tracking", "Sleep analysis", "Water resistant"],
-            colors: ["Black", "Rose Gold", "Silver"],
-            sizes: ["38mm", "42mm"],
-            warranty: "1 year manufacturer warranty"
-        }
-    },
-    {
-        id: 3,
-        name: "Men's Running Shoes",
-        price: 89.99,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&crop=center",
-        description: "Professional running shoes with advanced cushioning",
-        details: {
-            features: ["Air cushioning", "Breathable mesh", "Anti-slip sole", "Lightweight design"],
-            colors: ["Black/White", "Blue/Gray", "Red/Black"],
-            sizes: ["UK 6", "UK 7", "UK 8", "UK 9", "UK 10", "UK 11", "UK 12"],
-            warranty: "6 months warranty"
-        }
-    },
-    {
-        id: 4,
-        name: "Women's Casual T-Shirt",
-        price: 24.99,
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop&crop=center",
-        description: "Comfortable cotton t-shirt for everyday wear",
-        details: {
-            features: ["100% cotton", "Machine washable", "Soft fabric", "Classic fit"],
-            colors: ["White", "Black", "Pink", "Blue", "Gray"],
-            sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-            warranty: "30 days return policy"
-        }
-    },
-    {
-        id: 5,
-        name: "Wireless Phone Charger",
-        price: 49.99,
-        image: "https://images.unsplash.com/photo-1586953983027-d7508698d6b3?w=400&h=400&fit=crop&crop=center",
-        description: "Fast wireless charging pad for all compatible devices",
-        details: {
-            features: ["15W fast charging", "LED indicator", "Universal compatibility", "Heat protection"],
-            colors: ["Black", "White"],
-            warranty: "1 year warranty"
-        }
-    },
-    {
-        id: 6,
-        name: "Designer Sunglasses",
-        price: 79.99,
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop&crop=center",
-        description: "UV protection sunglasses with polarized lenses",
-        details: {
-            features: ["UV400 protection", "Polarized lenses", "Anti-glare", "Lightweight frame"],
-            colors: ["Black", "Brown", "Gold"],
-            warranty: "1 year warranty"
-        }
-    },
-    {
-        id: 7,
-        name: "Bluetooth Speaker",
-        price: 69.99,
-        image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center",
-        description: "Portable bluetooth speaker with premium sound quality",
-        details: {
-            features: ["360° sound", "12-hour battery", "Water resistant", "Voice assistant"],
-            colors: ["Black", "Blue", "Red"],
-            warranty: "1 year warranty"
-        }
-    },
-    {
-        id: 8,
-        name: "Leather Wallet",
-        price: 39.99,
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-        description: "Genuine leather wallet with RFID protection",
-        details: {
-            features: ["RFID blocking", "Genuine leather", "Multiple card slots", "Coin pocket"],
-            colors: ["Brown", "Black", "Tan"],
-            warranty: "6 months warranty"
-        }
-    },
-    {
-        id: 9,
-        name: "Women's Dress Shoes",
-        price: 129.99,
-        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=400&fit=crop&crop=center",
-        description: "Elegant dress shoes perfect for formal occasions",
-        details: {
-            features: ["Genuine leather", "Comfortable heel", "Non-slip sole", "Elegant design"],
-            colors: ["Black", "Brown", "Navy"],
-            sizes: ["UK 3", "UK 4", "UK 5", "UK 6", "UK 7", "UK 8"],
-            warranty: "6 months warranty"
-        }
-    },
-    {
-        id: 10,
-        name: "Smart Phone Case",
-        price: 19.99,
-        image: "https://images.unsplash.com/photo-1601593346740-925612772716?w=400&h=400&fit=crop&crop=center",
-        description: "Protective phone case with card holder",
-        details: {
-            features: ["Drop protection", "Card slots", "Magnetic closure", "Camera protection"],
-            colors: ["Black", "Brown", "Blue"],
-            compatibility: ["iPhone 14", "iPhone 13", "Samsung Galaxy S23"],
-            warranty: "3 months warranty"
-        }
-    },
-    {
-        id: 11,
-        name: "Men's Polo Shirt",
-        price: 34.99,
-        image: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&h=400&fit=crop&crop=center",
-        description: "Classic polo shirt made from premium cotton",
-        details: {
-            features: ["100% cotton", "Breathable fabric", "Classic collar", "Machine washable"],
-            colors: ["Navy", "White", "Gray", "Green"],
-            sizes: ["S", "M", "L", "XL", "XXL"],
-            warranty: "30 days return policy"
-        }
-    },
-    {
-        id: 12,
-        name: "Ceramic Coffee Mug",
-        price: 16.99,
-        image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop&crop=center",
-        description: "Handcrafted ceramic coffee mug with unique design",
-        details: {
-            features: ["Handcrafted ceramic", "Heat resistant", "Dishwasher safe", "350ml capacity"],
-            colors: ["White", "Blue", "Green"],
-            warranty: "30 days return policy"
-        }
-    },
-    {
-        id: 13,
-        name: "Wireless Earbuds",
-        price: 89.99,
-        image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=400&fit=crop&crop=center",
-        description: "True wireless earbuds with noise cancellation",
-        details: {
-            features: ["Active noise cancellation", "6-hour battery", "Touch controls", "Water resistant"],
-            colors: ["White", "Black"],
-            warranty: "1 year warranty"
-        }
-    },
-    {
-        id: 14,
-        name: "Women's Handbag",
-        price: 79.99,
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop&crop=center",
-        description: "Stylish handbag perfect for daily use",
-        details: {
-            features: ["Premium material", "Multiple compartments", "Adjustable strap", "Elegant design"],
-            colors: ["Black", "Brown", "Beige"],
-            warranty: "6 months warranty"
-        }
-    },
-    {
-        id: 15,
-        name: "Gaming Mouse",
-        price: 59.99,
-        image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop&crop=center",
-        description: "High-precision gaming mouse with RGB lighting",
-        details: {
-            features: ["12000 DPI", "RGB lighting", "Programmable buttons", "Ergonomic design"],
-            colors: ["Black", "White"],
-            warranty: "2 years warranty"
-        }
+  {
+    id: 1,
+    name: "Garage Doors",
+    price: 2500,
+    image: "images/garage doors.png",
+    description: "Secure and automated garage doors.",
+    details: {
+      features: ["Remote control", "Durable", "Weather resistant"],
+      warranty: "2-year installation warranty"
     }
+  },
+  {
+    id: 2,
+    name: "Automated Gates",
+    price: 4500,
+    image: "images/automated gate.jpeg",
+    description: "Convenient entry with smart automation.",
+    details: {
+      features: ["Motion sensors", "Keypad access", "Remote opening"],
+      warranty: "3-year warranty"
+    }
+  },
+  {
+    id: 3,
+    name: "Electric Fences",
+    price: 3200,
+    image: "images/electric fence.jpg",
+    description: "Robust electric fencing for your property.",
+    details: {
+      features: ["High voltage", "Alarm system", "Durable wiring"],
+      warranty: "5-year warranty"
+    }
+  },
+  {
+    id: 4,
+    name: "CCTV Surveillance",
+    price: 1500,
+    image: "images/cctv.jpeg",
+    description: "24/7 monitoring with HD cameras.",
+    details: {
+      features: ["HD quality", "Mobile access", "Night vision"],
+      warranty: "2-year warranty"
+    }
+  },
+  {
+    id: 5,
+    name: "Intercom Systems",
+    price: 1000,
+    image: "images/intercom.jpg",
+    description: "Safe audio and video communication.",
+    details: {
+      features: ["Video call", "Indoor & outdoor units", "Clear audio"],
+      warranty: "1-year warranty"
+    }
+  },
+  {
+    id: 6,
+    name: "Security Shutters",
+    price: 3000,
+    image: "images/shutter.jpeg",
+    description: "Strong roller shutters for protection.",
+    details: {
+      features: ["Remote controlled", "Anti-rust", "Heavy-duty"],
+      warranty: "3-year warranty"
+    }
+  }
 ];
 
-// Configuration
+
 const config = {
-    whatsappNumber: '+233542676713', // Odisika Mall WhatsApp number
-    currency: 'GH₵',
-    storeName: 'Odisika Mall'
+  whatsappNumber: '+233241588134',
+  currency: 'GH₵',
+  storeName: 'Kofi N. Technologies'
 };
+
+// Rendering and modal logic same as your original script.js
+// Use your existing event listeners, modal handlers, and functions
+// Just make sure to call renderProducts() on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+});
+
+function renderProducts() {
+  const grid = document.getElementById("products-grid");
+  grid.innerHTML = products.map(p => `
+    <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-xl transition cursor-pointer">
+      <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-cover rounded-lg mb-4">
+      <h3 class="text-lg font-bold text-gray-800 mb-1">${p.name}</h3>
+      <p class="text-gray-600 mb-2">${p.description}</p>
+      <p class="text-primary-600 font-bold">${config.currency}${p.price}</p>
+    </div>
+  `).join('');
+}
+
 
 // DOM Elements
 const productsGrid = document.getElementById('products-grid');
@@ -615,3 +515,24 @@ window.openPaymentModal = openPaymentModal;
 window.closePaymentModal = closePaymentModal;
 window.handleImageError = handleImageError;
 window.getColorHex = getColorHex;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const multiTrack = document.getElementById("carousel-track-multi");
+  const items = multiTrack.querySelectorAll(".carousel-item");
+  const itemWidth = items[0].offsetWidth + 16; // 16px = gap
+
+  let scrollAmount = 0;
+
+  setInterval(() => {
+    scrollAmount += itemWidth;
+
+    if (scrollAmount >= multiTrack.scrollWidth - multiTrack.clientWidth) {
+      scrollAmount = 0; // reset to start
+    }
+
+    multiTrack.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }, 3000);
+});

@@ -174,6 +174,45 @@ html {
 .product-card:hover .product-image {
   transform: scale(1.05);
 }
+#media-carousel .carousel-multi {
+  overflow: hidden;
+  position: relative;
+}
+
+#carousel-track-multi {
+  display: flex;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* hides scroll */
+}
+
+#carousel-track-multi::-webkit-scrollbar {
+  display: none;
+}
+#carousel-track-multi {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.video-card video:hover {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.4);
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.video-card {
+  transition: transform 0.3s ease;
+}
+
+
+/* Hide scrollbars completely */
+#carousel-track-multi::-webkit-scrollbar {
+  display: none;
+}
+#carousel-track-multi {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 /* Button hover effects */
 .btn-primary {
